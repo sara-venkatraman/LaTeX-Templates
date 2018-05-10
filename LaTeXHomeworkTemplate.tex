@@ -1,0 +1,103 @@
+%  Sara's LaTeX Template for Homework
+
+\documentclass[11pt]{article}
+\usepackage{
+  amsmath, amssymb, mathtools, bbm, units,      % Math typesetting packages (units for \nicefrac)
+  graphicx, wrapfig, subfig, float,             % Image packages
+  listings, color, inconsolata,                 % Code packages
+  fancyhdr, sectsty, hyperref }                 % Headers/footers, section fonts, links
+
+% Page style settings
+\renewcommand{\baselinestretch}{1.07}          % Adjusts line spacing
+\setlength\parindent{0pt}                      % Remove paragraph indentation
+\allowdisplaybreaks                            % Allow multi-line equations to break to next page
+\usepackage{geometry}\geometry{letterpaper,    % Set page margins
+  left=1.15in, right=1.15in,
+  top=1.08in, bottom=0.95in,
+  headsep=.22in}
+
+% Settings for internal/external links
+\hypersetup{
+  colorlinks=true,
+  linkcolor=magenta }
+
+% Uncomment these lines to make section/subsection title fonts smaller
+% \sectionfont{\fontsize{13}{15}\selectfont}
+% \subsectionfont{\fontsize{11}{15}\selectfont}
+
+% Uncomment the next line to make text fill an entire page
+% \flushbottom
+
+% Anchors footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Settings for headers/footers
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% \mathscr{(letter here)} is a nice font for vector spaces
+\usepackage[mathscr]{euscript}
+
+% 'numberthis' is a custom command that adds a reference number to a single line of a
+% multiline equation, e.g. "\numberthis\label{(name here)}" in align/gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Settings for code listings
+\definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
+\definecolor{greyText}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codeFrame}{rgb}{0.7, 0.5, 0.5}
+\definecolor{backgroundColor}{rgb}{0.95, 0.95, 0.92}
+\lstdefinestyle{code} {
+  % backgroundcolor=\color{backgroundColor},     % Uncomment this to add green background to code listing
+  frame=single,                                  % Comment this line and the next to remove green border
+  rulecolor=\color{greenText},
+  numberstyle=\tiny\color{greyText},
+  commentstyle=\color{greenText},
+  basicstyle=\linespread{1}\ttfamily\footnotesize,
+  keywordstyle=\ttfamily\footnotesize,
+  showstringspaces=false,
+  numbers=left,
+  numbersep=5pt }
+\lstset{style=code} 
+  
+% Shortcut commands for bold math symbols; \bg{...} is for bold Greek letters
+\let\b\mathbf
+\let\bg\boldsymbol
+
+% Convergence: rightarrow with optimal text on top indicating type of convergence
+\newcommand{\converge}[1][]{\xrightarrow{#1}}
+
+% Normal distribution: first parameter is the mean, second parameter is the variance
+\newcommand{\normal}[2]{\mathcal{N}(#1,#2)}
+
+% iid random variables
+\newcommand{\iid}{\stackrel{\text{iid}}{\sim}}
+
+% Natural, rational, real, and complex numbers. Probability measure.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\pr}{\mathbb{P}}
+
+% argmax, argmin, variance, covariance, bias
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\var}{Var}
+\DeclareMathOperator*{\cov}{Cov}
+\DeclareMathOperator*{\bias}{Bias}
+
+% Left and right header text (to appear on every page)
+\lhead{STAT 123 (Course Name) -- Homework 0}
+\rhead{Sara Venkatraman}
+
+% -- Document starts here --
+\begin{document}
+\boxed{\begin{minipage}{\textwidth - 0.58em}{\textbf{Question 1}} -- \textit{Write the question here}\end{minipage}} \\
+
+Write the answer here
+
+% Alternative question title 
+% \subsection*{Question 1 - Chapter Q, \#Q}
+
+\end{document}
