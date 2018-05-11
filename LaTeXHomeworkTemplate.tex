@@ -31,18 +31,6 @@
 % Anchors footnotes to the bottom of the page
 \usepackage[bottom]{footmisc}
 
-% Settings for headers/footers
-\pagestyle{fancy}
-\renewcommand{\footrulewidth}{0.5pt}
-\renewcommand{\headrulewidth}{0.5pt}
-
-% \mathscr{(letter here)} is a nice font for vector spaces
-\usepackage[mathscr]{euscript}
-
-% 'numberthis' is a custom command that adds a reference number to a single line of a
-% multiline equation, e.g. "\numberthis\label{(name here)}" in align/gather environment
-\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
 % Settings for code listings
 \definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
 \definecolor{greyText}{rgb}{0.5, 0.5, 0.5}
@@ -60,7 +48,14 @@
   numbers=left,
   numbersep=5pt }
 \lstset{style=code} 
-  
+
+% \mathscr{(letter here)} is a nice font for vector spaces
+\usepackage[mathscr]{euscript}
+
+% 'numberthis' is a custom command that adds a reference number to a single line of a
+% multiline equation, e.g. "\numberthis\label{(name here)}" in align/gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
 % Shortcut commands for bold math symbols; \bg{...} is for bold Greek letters
 \let\b\mathbf
 \let\bg\boldsymbol
@@ -75,9 +70,9 @@
 \newcommand{\iid}{\stackrel{\text{iid}}{\sim}}
 
 % Natural, rational, real, and complex numbers. Probability measure.
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\pr}{\mathbb{P}}
 
 % argmax, argmin, variance, covariance, bias
@@ -87,7 +82,10 @@
 \DeclareMathOperator*{\cov}{Cov}
 \DeclareMathOperator*{\bias}{Bias}
 
-% Left and right header text (to appear on every page)
+% Settings for left and right header text and footer (to appear on every page)
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0.5pt}
 \lhead{STAT 123 (Course Name) -- Homework 0}
 \rhead{Sara Venkatraman}
 
