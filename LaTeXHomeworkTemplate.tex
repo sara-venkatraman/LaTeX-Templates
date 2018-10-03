@@ -1,25 +1,30 @@
-%  Sara's LaTeX Template for Homework
+% Sara's LaTeX Template for Homework
 
 \documentclass[11pt]{article}
 \usepackage{
-  amsmath, amssymb, mathtools, bbm, units,      % Math typesetting packages (units for \nicefrac)
-  graphicx, wrapfig, subfig, float,             % Image packages
-  listings, color, inconsolata,                 % Code packages
-  fancyhdr, sectsty, hyperref }                 % Headers/footers, section fonts, links
+  amsmath, amssymb, mathtools, bbm, units,          % Math typesetting packages (units for \nicefrac)
+  graphicx, wrapfig, subfig, float,                 % Image packages
+  listings, color, inconsolata,                     % Code packages
+  fancyhdr, sectsty, hyperref, enumerate, framed }  % Headers/footers, section fonts, links
 
 % Page style settings
-\renewcommand{\baselinestretch}{1.07}          % Adjusts line spacing
-\setlength\parindent{0pt}                      % Remove paragraph indentation
-\allowdisplaybreaks                            % Allow multi-line equations to break to next page
-\usepackage{geometry}\geometry{letterpaper,    % Set page margins
-  left=1.15in, right=1.15in,
-  top=1.08in, bottom=0.95in,
+\renewcommand{\baselinestretch}{1.1}                % Adjusts line spacing
+\setlength\parindent{0pt}                           % Remove paragraph indentation
+\allowdisplaybreaks                                 % Allow multi-line equations to break to next page
+\usepackage{geometry}\geometry{letterpaper,         % Set page margins
+  left=1.25in, right=1.25in,
+  top=1.15in, bottom=1in,
   headsep=.22in}
 
+% Frame settings (for problem statement)
+\setlength\FrameSep{0.55em}
+\setlength\OuterFrameSep{\partopsep}
+
 % Settings for internal/external links
-\hypersetup{
-  colorlinks=true,
-  linkcolor=magenta }
+\hypersetup{colorlinks=true,linkcolor=magenta}
+
+% Anchors footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
 
 % Uncomment these lines to make section/subsection title fonts smaller
 % \sectionfont{\fontsize{13}{15}\selectfont}
@@ -27,9 +32,6 @@
 
 % Uncomment the next line to make text fill an entire page
 % \flushbottom
-
-% Anchors footnotes to the bottom of the page
-\usepackage[bottom]{footmisc}
 
 % Settings for code listings
 \definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
@@ -56,6 +58,10 @@
 % multiline equation, e.g. "\numberthis\label{(name here)}" in align/gather environment
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
+% 'question' is a custom command for writing the statement of a problem; first argument
+% is the question number, the second is the statement
+\newcommand{\question}[2]{\begin{framed}\noindent \textbf{Question #1}\\ #2\end{framed}}
+
 % Shortcut commands for bold math symbols; \bg{...} is for bold Greek letters
 \let\b\mathbf
 \let\bg\boldsymbol
@@ -69,15 +75,19 @@
 % iid random variables
 \newcommand{\iid}{\stackrel{\text{iid}}{\sim}}
 
-% Natural, rational, real, and complex numbers. Probability measure.
+% Natural, rational, real, and complex numbers. Probability measure and expectation.
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\pr}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
 
-% argmax, argmin, variance, covariance, bias
+% argmax, argmin, argsup, arginf, variance, covariance, bias
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argsup}{argsup}
+\DeclareMathOperator*{\arginf}{arginf}
 \DeclareMathOperator*{\var}{Var}
 \DeclareMathOperator*{\cov}{Cov}
 \DeclareMathOperator*{\bias}{Bias}
@@ -86,13 +96,19 @@
 \pagestyle{fancy}
 \renewcommand{\footrulewidth}{0.5pt}
 \renewcommand{\headrulewidth}{0.5pt}
-\lhead{STAT 123 (Course Name) -- Homework 0}
+\lhead{STAT 123 (Course Name) -- Homework X}
 \rhead{Sara Venkatraman}
 
 % -- Document starts here --
 \begin{document}
-\boxed{\begin{minipage}{\textwidth - 0.58em}{\textbf{Question 1}} -- \textit{Write the question here}\end{minipage}} \\
 
+\question{1}{
+  Write the question here
+  \vspace{-3mm}\begin{enumerate}[(a)]\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+  \item Part A
+  \item Part B
+  \end{enumerate}\vspace{-3mm}
+}
 Write the answer here
 
 % Alternative question title 
