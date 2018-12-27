@@ -1,0 +1,109 @@
+% -- LaTeX Template for a CV/Resume (S. Venkatraman) --
+
+\documentclass[letterpaper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace, longtable, graphicx, hyphenat, hyperref}
+\usepackage[left=1in, right=1in, bottom=1in, top=0.8in]{geometry}
+\renewcommand{\baselinestretch}{1.05}
+\hypersetup{colorlinks=true, linkcolor=magenta}
+\begin{document}
+
+% -- Header --
+\noindent\Large{\textbf{Name}}  \\
+\vspace{-2ex}
+\hrule
+\normalsize
+
+% -- Contact information --
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Permanent address}  & \hspace{0.38in} \textbf{Mailing address}    & \hspace{0.33in} Email: address@gmail.com \\
+271 Street Name             & \hspace{0.38in} 628 Street Name             & \hspace{0.33in} Phone: +1 (314) 159-2653 \\
+City, State Zipcode         & \hspace{0.38in} City, State Zipcode         & \hspace{0.33in} Citizenship: Country \\
+\end{tabular}
+\end{center}
+
+% -- Table setup --
+\noindent \setlength{\tabcolsep}{8pt}
+\begin{longtable}{p{1.1in}p{5in}}
+
+% -- Education --
+\sc{Education} & \textbf{University 1}        \hfill City, State \\
+& Ph.D. in Subject {\small(\textit{GPA: })}   \hfill Month Year -- Month Year\\
+& {\small  \textit{Selected coursework}: Statistics 5, Statistics 6, Mathematics 5, Mathematics 6, Computer Science 5, Computer Science 6, Physics 5, Physics 6, Literature 5, Literature 6.}\\
+& \\
+& \textbf{University 2}                       \hfill City, State\\
+& M.A. in Subject {\small(\textit{GPA: })}    \hfill Month Year -- Month Year\\
+& {\small  \textit{Selected coursework}: Statistics 3, Statistics 4, Mathematics 3, Mathematics 4, Computer Science 3, Computer Science 4, Physics 3, Physics 4, Literature 3, Literature 4.}\\
+& \\
+& \textbf{University 3}                       \hfill City, State\\
+& B.A. in Subject {\small(\textit{GPA: })}    \hfill Month Year -- Month Year\\
+& {\small  \textit{Selected coursework}: Statistics 1, Statistics 2, Mathematics 1, Mathematics 2, Computer Science 1, Computer Science 2, Physics 1, Physics 2, Literature 1, Literature 2.}\\
+& \\
+
+% -- Research interests --
+\nohyphens{\sc{Research interests}} & Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Donec eu malesuada libero, vitae aliquet est. \\
+& \\
+
+% -- Research projects --
+\nohyphens{\sc{Research projects}} & ``Project 1 Title'' (Dates). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a rutrum ipsum, eget hendrerit neque. Fusce congue, mi quis sagittis blandit, odio justo mollis est, at tincidunt justo magna eget turpis. Ut placerat felis sapien, vel fermentum augue tristique at. \href{ }{Relevant link}.\\
+& \\
+& ``Project 2 Title'' (Dates). Nam posuere tellus id tellus faucibus mollis. Aenean non purus ac felis pretium pellentesque eget at turpis. Phasellus pulvinar metus nec lorem euismod, vitae viverra purus porttitor. Morbi pulvinar quam ac nibh congue, at aliquam neque fermentum. \href{ }{Relevant link}.\\
+& \\
+
+% -- Teaching experience --
+{\sc Teaching}   &  \textbf{Teaching Assistant, Department of Statistics (University 1)}\\
+{\sc Experience} &  STAT 123 (Course Name) \hfill Month Year -- Month Year\\
+& Ut suscipit faucibus velit sit amet posuere. Vivamus eget vehicula ipsum. Suspendisse potenti. In luctus urna in hendrerit rutrum.\\
+& \\
+& \textbf{Teaching Assistant, Department of Statistics (University 2)}\\
+& STAT 456 (Course Name) \hfill Month Year -- Month Year\\
+& Sed sagittis quam sed diam hendrerit, tempor rhoncus massa euismod. Duis posuere velit non elit iaculis, eu faucibus lectus egestas. \\
+&\\
+
+% -- Industry/professional experience --
+{\sc Professional} & {\textbf{Company 1}}, Division of company  \hfill City, State\\
+{\sc Experience}& Title of internship \hfill Summer 201X\\
+& In non nulla turpis. Suspendisse et sem non elit imperdiet accumsan. Mauris eleifend ut ante vitae rutrum. Vivamus tincidunt tellus ac risus interdum.\\
+&\\ 
+&{\textbf{Company 2}}, Division of company \hfill City, State\\
+& Title of internship \hfill Summer 201Y \\
+& Nulla viverra posuere nibh, rhoncus finibus leo sollicitudin a. Ut id interdum mauris, eget dignissim diam. Maecenas ultrices euismod feugiat.\\
+& \\
+
+% -- Talks --
+{\sc Academic}     & \textbf{Organization 1 (University 1)} \hfill Month Year - Month Year \\
+{\sc Groups/Talks} & Sed id dolor magna. Curabitur ullamcorper sagittis quam tincidunt ultricies. Phasellus vel turpis arcu. Donec ullamcorper mi dui. \href{ }{Relevant link}.\\
+&\\
+& \textbf{Organization 2 (University 2)} \hfill Month Year -- Month Year \\
+& Donec vel justo in tellus sollicitudin dapibus. Vivamus tristique urna non sagittis ullamcorper. Maecenas tristique nisi mi, vitae accumsan turpis. \href{ }{Relevant link}.\\
+& \\
+
+% -- Professional memberships --
+{\sc Professional} & {\textbf{American Statistical Association}} \hfill Month Year -- Present \\
+{\sc Memberships} & Conferences attended: Conference 1 (Date), Conference 2 (Date), Conference 3 (Date) \\
+& \\
+
+% -- Awards --
+{\sc Honors} & Award 1 (University 1) \hfill Month Year \\
+& Award 2 (University 2) \hfill Month Year \\
+& \\
+
+% -- Skills --
+{\sc Skills} & \textbf{Programming}\\
+& Proficient in: Language 1, Language 2, Language 3 \\
+& Familiar with: Language 4, Language 5, Language 6 \\
+& \\
+& \textbf{Tools and Software} \\
+& \LaTeX, Git, Software 1, Software 2, Software 3 \\
+& \\
+& \textbf{Languages} \\
+& English (native), French (fluent) \\
+& \\
+
+% -- Other/hobbies --
+\nohyphens{\sc{Other Interests}} & Praesent fringilla lacus enim, et tristique dui blandit et. Aenean faucibus ligula eget magna dignissim, sit amet egestas ante tristique. Nam eget diam tortor. \\
+
+\end{longtable}
+
+\end{document}

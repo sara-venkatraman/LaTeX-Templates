@@ -1,4 +1,4 @@
-% -- LaTeX Template for Homework (S. Venkatraman) --
+% -- LaTeX Template for Research Papers (S. Venkatraman) --
 
 \documentclass[10pt]{article}
 \usepackage{
@@ -9,25 +9,25 @@
 
 % -- Page style settings --
 % \flushbottom                                      % Uncomment to make text fill the entire page
-\usepackage[bottom]{footmisc}                       % Anchor footnotes to bottom of page
-\renewcommand{\baselinestretch}{1.15}               % Adjust line spacing
-\setlength\parindent{0pt}                           % Remove paragraph indentation
+% \setlength\parindent{0pt}                         % Uncomment to remove paragraph indentation
+\usepackage[bottom]{footmisc}                       % Anchor footnotes to the bottom of the page
+\renewcommand{\baselinestretch}{1.05}               % Adjust line spacing
 \allowdisplaybreaks                                 % Allow multi-line equations to break to next page
 \usepackage{geometry}\geometry{letterpaper,         % Set page margins
-  left=1.35in, right=1.35in,
-  top=1.15in, bottom=1in,
-  headsep=.22in}
+  left=1.65in, right=1.65in,
+  top=1.15in, bottom=1.1in,
+  headsep=.2in}
 
-% -- Frame settings (for problem statement) --
+% -- Frame settings (for framed text) --
 \setlength\FrameSep{0.55em}
 \setlength\OuterFrameSep{\partopsep}
 
 % -- Settings for internal/external links --
-\hypersetup{colorlinks=true, linkcolor=magenta}
+\hypersetup{colorlinks=true, linkcolor=magenta, citecolor=magenta}
 
-% -- Uncomment these lines to make section/subsection title fonts smaller --
-% \sectionfont{\fontsize{13}{15}\selectfont}
-% \subsectionfont{\fontsize{11}{15}\selectfont}
+% -- Comment these lines to make section/subsection title fonts smaller --
+\sectionfont{\fontsize{13}{15}\selectfont}
+\subsectionfont{\fontsize{11}{15}\selectfont}
 
 % -- Settings for code listings --
 \definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
@@ -35,7 +35,7 @@
 \definecolor{codeFrame}{rgb}{0.7, 0.5, 0.5}
 \definecolor{backgroundColor}{rgb}{0.95, 0.95, 0.92}
 \lstdefinestyle{code} {
-  % backgroundcolor=\color{backgroundColor},     % Uncomment this to add green background to listing
+  % backgroundcolor=\color{backgroundColor},     % Uncomment this to add green background to code listing
   frame=single,                                  % Comment this line and the next to remove green border
   rulecolor=\color{greenText},
   numberstyle=\tiny\color{greyText},
@@ -90,26 +90,34 @@
 \DeclareMathOperator*{\cov}{Cov}
 \DeclareMathOperator*{\bias}{Bias}
 
-% -- Left/right header text and footer (to appear on every page) --
+% -- Centered header text and footer (to appear on every page) --
 \pagestyle{fancy}
 \renewcommand{\footrulewidth}{0.5pt}
 \renewcommand{\headrulewidth}{0.5pt}
-\lhead{STAT 123 (Course Name) -- Homework X}
-\rhead{Sara Venkatraman}
+\chead{{\small Shorter Version of Paper Title}}
+\lhead{}\rhead{}
 
 % -- Document starts here --
 \begin{document}
+\title{Title of Paper}
+\author{\small{Sara Venkatraman}}\date{}
+\maketitle
 
-\question{1}{
-  Write the question here
-  \vspace{-3mm}\begin{enumerate}[(a)]\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-  \item Part A
-  \item Part B
-  \end{enumerate}\vspace{-3mm}
-}
-Write the answer here
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a rutrum ipsum, eget hendrerit neque. Fusce congue, mi quis sagittis blandit, odio justo mollis est, at tincidunt justo magna eget turpis. Ut placerat felis sapien, vel fermentum augue tristique at. Nam posuere tellus id tellus faucibus mollis. Aenean non purus ac felis pretium pellentesque eget at turpis. Phasellus pulvinar metus nec lorem euismod, vitae viverra purus porttitor. Morbi pulvinar quam ac nibh congue, at aliquam neque fermentum. Ut suscipit faucibus velit sit amet posuere. Vivamus eget vehicula ipsum. Suspendisse potenti. In luctus urna in hendrerit rutrum. \smallskip
 
-% Alternative question title 
-% \subsection*{Question 1 - Chapter Q, \#Q}
+Sed sagittis quam sed diam hendrerit, tempor rhoncus massa euismod. Duis posuere velit non elit iaculis, eu faucibus lectus egestas. Donec eu malesuada libero, vitae aliquet est. In non nulla turpis. Suspendisse et sem non elit imperdiet accumsan. Mauris eleifend ut ante vitae rutrum. Vivamus tincidunt tellus ac risus interdum, a ultrices ante convallis. Nunc feugiat pellentesque porttitor. Nulla viverra posuere nibh, rhoncus finibus leo sollicitudin a. Ut id interdum mauris, eget dignissim diam. Maecenas ultrices euismod feugiat. Nullam tempor ligula non magna dapibus, id luctus tortor pretium. Sed id dolor magna. Curabitur ullamcorper sagittis quam tincidunt ultricies. Phasellus vel turpis arcu. Donec ullamcorper mi dui.
+
+\section{First section}
+
+\subsection{First subsection}
+
+% -- Bibliography --
+{\small\begin{thebibliography}{1}    
+    \bibitem{citation1}
+    Author.
+    ``Title''.
+    \textit{Journal Name}.
+    Year Volume: PageStart-PageEnd.
+\end{thebibliography}}
 
 \end{document}
