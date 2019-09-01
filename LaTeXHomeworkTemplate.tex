@@ -5,15 +5,15 @@
 % -- Imports for (most) packages --
 % 'units' is for '\nicefrac' (diagonally-stacked fractions), 'bbm' is for indicator functions (e.g. '\mathbbm{1}')
 \usepackage{
-  amsmath, amsthm, amssymb, mathtools, bbm, units,   % Math typesetting packages (units for \nicefrac)
-  graphicx, wrapfig, subfig, float,                  % Graphics packages
-  listings, color, inconsolata, pythonhighlight,      % Code packages
+  amsmath, amsthm, amssymb, mathtools, bbm, units,             % Math typesetting packages (units for \nicefrac)
+  graphicx, wrapfig, subfig, float,                            % Graphics packages
+  listings, color, inconsolata, pythonhighlight,               % Code packages
   fancyhdr, sectsty, hyperref, enumerate, enumitem, framed }   % Headers/footers, section fonts, links, lists
 
 % -- Page layout settings --
 % \flushbottom                                       % Uncomment to make text fill the entire page
 \usepackage[bottom]{footmisc}                        % Anchor footnotes to bottom of page
-\renewcommand{\baselinestretch}{1.07}                 % Adjust line spacing
+\renewcommand{\baselinestretch}{1.07}                % Adjust line spacing
 \setlength\parindent{0pt}                            % Remove paragraph indentation
 \allowdisplaybreaks                                  % Allow multi-line equations to break to next page
 \usepackage{geometry}\geometry{letterpaper,          % Set page margins
@@ -24,6 +24,10 @@
 % -- Frame settings (for problem statement) --
 \setlength\FrameSep{0.55em}
 \setlength\OuterFrameSep{\partopsep}
+
+% -- 'question' is a custom command for writing the statement of a problem; first argument
+% is the question number, second argument is the statement --
+\newcommand{\question}[2]{\begin{framed}\noindent \textbf{Question #1}\\ #2\end{framed}}
 
 % -- Flush left for 'enumerate' numbers
 \setlist[enumerate]{wide=0pt, leftmargin=12pt, labelwidth=0pt, align=left}
@@ -62,10 +66,6 @@
 % 'numberthis' is a custom command that adds a reference number to a single line of a
 % multi-line equation, e.g. "\numberthis\label{(name here)}" in align/gather environment
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-
-% 'question' is a custom command for writing the statement of a problem; first argument
-% is the question number, second argument is the statement
-\newcommand{\question}[2]{\begin{framed}\noindent \textbf{Question #1}\\ #2\end{framed}}
 
 % Shortcuts for bold math symbols; \bg{...} is for bold Greek letters
 \let\b\mathbf
@@ -124,8 +124,5 @@
   \item Part B
   \end{enumerate}\vspace{-3mm}
 }
-
-% Alternative question title 
-% \subsection*{Question 1 - Chapter Q, \#Q}
 
 \end{document}
