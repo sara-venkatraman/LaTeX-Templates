@@ -1,19 +1,19 @@
 % -- LaTeX Template for Homework (S. Venkatraman) --
 
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
 % -- Imports for (most) packages --
 % 'units' is for '\nicefrac' (diagonally-stacked fractions), 'bbm' is for indicator functions (e.g. '\mathbbm{1}')
 \usepackage{
   amsmath, amsthm, amssymb, mathtools, bbm, units,   % Math typesetting packages (units for \nicefrac)
   graphicx, wrapfig, subfig, float,                  % Graphics packages
-  listings, color, inconsolata,                      % Code packages
-  fancyhdr, sectsty, hyperref, enumerate, framed }   % Headers/footers, section fonts, links, lists
+  listings, color, inconsolata, pythonhighlight,      % Code packages
+  fancyhdr, sectsty, hyperref, enumerate, enumitem, framed }   % Headers/footers, section fonts, links, lists
 
 % -- Page layout settings --
 % \flushbottom                                       % Uncomment to make text fill the entire page
 \usepackage[bottom]{footmisc}                        % Anchor footnotes to bottom of page
-\renewcommand{\baselinestretch}{1.1}                 % Adjust line spacing
+\renewcommand{\baselinestretch}{1.07}                 % Adjust line spacing
 \setlength\parindent{0pt}                            % Remove paragraph indentation
 \allowdisplaybreaks                                  % Allow multi-line equations to break to next page
 \usepackage{geometry}\geometry{letterpaper,          % Set page margins
@@ -25,16 +25,19 @@
 \setlength\FrameSep{0.55em}
 \setlength\OuterFrameSep{\partopsep}
 
+% -- Flush left for 'enumerate' numbers
+\setlist[enumerate]{wide=0pt, leftmargin=12pt, labelwidth=0pt, align=left}
+
 % -- Settings for internal/external links --
 \hypersetup{colorlinks=true, linkcolor=magenta}
-
-% -- Set font to 'Charter', with math support --
-\usepackage[bitstream-charter]{mathdesign}
-\usepackage[T1]{fontenc}
 
 % -- Uncomment these lines to make section/subsection title fonts smaller --
 % \sectionfont{\fontsize{13}{15}\selectfont}
 % \subsectionfont{\fontsize{11}{15}\selectfont}
+
+% -- Uncomment these lines to set font to 'Charter', with math support --
+ % \usepackage[bitstream-charter]{mathdesign}
+ % \usepackage[T1]{fontenc}
 
 % -- Settings for code listings --
 \definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
@@ -71,15 +74,15 @@
 % \mathscr{(letter here)} is a nice font for vector spaces
 \usepackage[mathscr]{euscript}
 
-% Convergence: right arrow with optional text above indicating type of convergence
+% Convergence: right arrow with optional text above
 % Usage: '\converge[w]' for weak convergence
 \newcommand{\converge}[1][]{\xrightarrow{#1}}
 
-% Normal distribution: first argument is the mean, second argument is the variance.
+% Normal distribution: first argument is the mean, second argument is the variance
 % Usage: '\normal{\mu}{\sigma}'
 \newcommand{\normal}[2]{\mathcal{N}(#1,#2)}
 
-% Uniform distribution: first parameter is left endpoint, second parameter is right endpoint.
+% Uniform distribution: first parameter is left endpoint, second parameter is right endpoint
 % Usage: '\unif{0}{1}'
 \newcommand{\unif}[2]{\text{Uniform}(#1,#2)}
 
@@ -110,19 +113,18 @@
 \pagestyle{fancy}
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\headrulewidth}{0.4pt}
-\lhead{\bf STAT 123 (Course Name) -- Homework X}
+\lhead{STAT 123 (Course Name) -- Homework X}
 \rhead{Sara Venkatraman}
 
 % -- Document starts here --
 \begin{document}
 
-\question{1}{Write the question here\vspace{-3mm}\begin{enumerate}[(a)]\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+\question{1}{Write the question here\vspace{-3mm}\begin{enumerate}[label=(\alph*)]\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
   \item Part A
   \item Part B
   \end{enumerate}\vspace{-3mm}
 }
-Write the answer here
- 
+
 % Alternative question title 
 % \subsection*{Question 1 - Chapter Q, \#Q}
 
