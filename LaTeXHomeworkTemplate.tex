@@ -13,7 +13,7 @@
 % -- Page layout settings --
 % \flushbottom                                       % Uncomment to make text fill the entire page
 \usepackage[bottom]{footmisc}                        % Anchor footnotes to bottom of page
-\renewcommand{\baselinestretch}{1.07}                % Adjust line spacing
+\renewcommand{\baselinestretch}{1.06}                % Adjust line spacing
 \setlength\parindent{0pt}                            % Remove paragraph indentation
 \allowdisplaybreaks                                  % Allow multi-line equations to break to next page
 \usepackage{geometry}\geometry{letterpaper,          % Set page margins
@@ -34,6 +34,9 @@
 
 % -- Settings for internal/external links --
 \hypersetup{colorlinks=true, linkcolor=magenta}
+
+% -- Make reference section title font smaller --
+\renewcommand{\refname}{\normalsize\bf{References}}
 
 % -- Uncomment these lines to make section/subsection title fonts smaller --
 % \sectionfont{\fontsize{13}{15}\selectfont}
@@ -91,8 +94,8 @@
 % iid random variables
 \newcommand{\iid}{\stackrel{\text{iid}}{\sim}}
 
-% Natural, integer, rational, real, and complex numbers. Probability, expectation, and
-% Borel sigma algebra. Non-italicized 'th' for math mode, e.g. $n^\tth$.
+% Natural, integer, rational, real, and complex numbers. Probability, expectation, and Borel sigma algebra. Non-italicized 'th' for math
+% mode, e.g. $n^\tth$. Big-O.
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -102,8 +105,9 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\tth}{\text{th}}
+\newcommand{\Oh}{\mathcal{O}}
 
-% argmax, argmin, argsup, arginf, variance, covariance, bias, range, 'with respect to'
+% argmax, argmin, argsup, arginf, variance, covariance, bias, range, 'with respect to', matrix diagonal, matrix trace
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argsup}{argsup}
@@ -113,6 +117,8 @@
 \DeclareMathOperator*{\bias}{Bias}
 \DeclareMathOperator*{\ran}{ran}
 \DeclareMathOperator*{\dv}{d\!}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\trace}{trace}
 
 % -- Left/right header text and footer (to appear on every page) --
 \pagestyle{fancy}
@@ -130,4 +136,20 @@
   \end{enumerate}\vspace{-3mm}
 }
 
+\begin{thebibliography}{7}
+
+    \bibitem{book1}
+    LastName, FirstName.
+    \textit{Book Title}.
+    Publisher, Year.
+    Print.
+
+  \bibitem{webpage1}
+    LastName, FirstName. ``Webpage Title''.
+    WebsiteName, OrganizationName.
+    Online; accessed Month Date, Year.\\
+    \texttt{www.URLhere.com}
+
+  \end{thebibliography}
+  
 \end{document}
