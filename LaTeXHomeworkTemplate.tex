@@ -13,11 +13,11 @@
 % -- Page layout settings --
 % \flushbottom                                       % Uncomment to make text fill the entire page
 \usepackage[bottom]{footmisc}                        % Anchor footnotes to bottom of page
-\renewcommand{\baselinestretch}{1.06}                % Adjust line spacing
+\renewcommand{\baselinestretch}{1.07}                % Adjust line spacing
 \setlength\parindent{0pt}                            % Remove paragraph indentation
 \allowdisplaybreaks                                  % Allow multi-line equations to break to next page
 \usepackage{geometry}\geometry{letterpaper,          % Set page margins
-  left=1.35in, right=1.35in,
+  left=1.45in, right=1.45in,
   top=1.1in, bottom=1in,
   headsep=.2in }
 
@@ -43,8 +43,8 @@
 % \subsectionfont{\fontsize{11}{15}\selectfont}
 
 % -- Uncomment these lines to set font to 'Charter', with math support --
- % \usepackage[bitstream-charter]{mathdesign}
- % \usepackage[T1]{fontenc}
+% \usepackage[bitstream-charter]{mathdesign}
+% \usepackage[T1]{fontenc}
 
 % -- Settings for code listings --
 \definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
@@ -120,9 +120,18 @@
 \DeclareMathOperator*{\diag}{diag}
 \DeclareMathOperator*{\trace}{trace}
 
+% Theorem, lemma, etc. settings
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
 % -- Left/right header text and footer (to appear on every page) --
 \pagestyle{fancy}
-\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{0.4pt}
 \lhead{STAT 123 (Course Name) -- Homework X}
 \rhead{Sara Venkatraman}
@@ -138,18 +147,18 @@
 
 \begin{thebibliography}{7}
 
-    \bibitem{book1}
-    LastName, FirstName.
-    \textit{Book Title}.
-    Publisher, Year.
-    Print.
+\bibitem{book1}
+  LastName, FirstName.
+  \textit{Book Title}.
+  Publisher, Year.
+  Print.
 
-  \bibitem{webpage1}
-    LastName, FirstName. ``Webpage Title''.
-    WebsiteName, OrganizationName.
-    Online; accessed Month Date, Year.\\
-    \texttt{www.URLhere.com}
+\bibitem{webpage1}
+  LastName, FirstName. ``Webpage Title''.
+  WebsiteName, OrganizationName.
+  Online; accessed Month Date, Year.\\
+  \texttt{www.URLhere.com}
 
-  \end{thebibliography}
-  
+\end{thebibliography}
+
 \end{document}
