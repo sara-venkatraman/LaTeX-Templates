@@ -5,7 +5,7 @@
 % -- Imports for (most) packages --
 % 'units' is for '\nicefrac' (diagonally-stacked fractions), 'bbm' is for indicator functions (e.g. '\mathbbm{1}')
 \usepackage{
-  amsmath, amsthm, amssymb, mathtools, bbm, units,             % Math typesetting packages (units for \nicefrac)
+  amsmath, amsthm, amssymb, mathtools, dsfont, units,          % Math typesetting packages (units for \nicefrac)
   graphicx, wrapfig, subfig, float,                            % Graphics packages
   listings, color, inconsolata, pythonhighlight,               % Code packages
   fancyhdr, sectsty, hyperref, enumerate, enumitem, framed }   % Headers/footers, section fonts, links, lists
@@ -15,6 +15,7 @@
 \usepackage[bottom]{footmisc}                        % Anchor footnotes to bottom of page
 \renewcommand{\baselinestretch}{1.07}                % Adjust line spacing
 \setlength\parindent{0pt}                            % Remove paragraph indentation
+\setlength{\parskip}{1.5mm}							 % Spacing between paragraphs
 \allowdisplaybreaks                                  % Allow multi-line equations to break to next page
 \usepackage{geometry}\geometry{letterpaper,          % Set page margins
   left=1.45in, right=1.45in,
@@ -31,6 +32,7 @@
 
 % -- Flush left for 'enumerate' numbers
 \setlist[enumerate]{wide=0pt, leftmargin=21pt, labelwidth=0pt, align=left}
+\setenumerate[1]{label={(\arabic*)}}
 
 % -- Settings for internal/external links --
 \hypersetup{colorlinks=true, linkcolor=magenta}
@@ -75,6 +77,7 @@
 % Shortcuts for bold math symbols; \bg{...} is for bold Greek letters
 \let\b\mathbf
 \let\bg\boldsymbol
+\let\mc\mathcal
 
 % \mathscr{(letter here)} is a nice font for vector spaces
 \usepackage[mathscr]{euscript}
@@ -94,8 +97,9 @@
 % iid random variables
 \newcommand{\iid}{\stackrel{\text{iid}}{\sim}}
 
-% Natural, integer, rational, real, and complex numbers. Probability, expectation, and Borel sigma algebra. Non-italicized 'th' for math
-% mode, e.g. $n^\tth$. Big-O.
+% Natural, integer, rational, real, and complex numbers. Probability, expectation,
+% Borel sigma algebra. Non-italicized 'th' for math mode, e.g. $n^\tth$. Big-O, 
+% indicator function
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -106,6 +110,7 @@
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\tth}{\text{th}}
 \newcommand{\Oh}{\mathcal{O}}
+\newcommand{\1}{\mathds{1}}
 
 % argmax, argmin, argsup, arginf, variance, covariance, bias, range, 'with respect to', matrix diagonal, matrix trace
 \DeclareMathOperator*{\argmax}{argmax}
