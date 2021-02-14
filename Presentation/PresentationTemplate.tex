@@ -1,0 +1,175 @@
+% --- LaTeX Presentation Template - S. Venkatraman ---
+
+% --- Set document class ---
+
+% Remove "[handout]" when presenting to include pauses
+\documentclass[handout]{beamer}
+\usetheme{default}
+
+% Make content that is hidden by pauses "transparent"
+\setbeamercovered{transparent}
+
+% --- Slide layout settings ---
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.15}
+
+% Set left and right text margins
+\setbeamersize{text margin left=12mm, text margin right=12mm}
+
+% --- Slide formatting settings ---
+
+% Set beige color for background of slide title and dark red
+% color for slide title font
+\usepackage{xcolor}
+\definecolor{background}{HTML}{F7F2E0}
+\definecolor{titleText}{HTML}{B40404}
+\setbeamercolor{frametitle}{bg=background, fg=titleText}
+\setbeamercolor{subtitle}{fg=titleText}
+
+% Set font sizes for frame title and subtitle
+\setbeamerfont{frametitle}{size=\fontsize{15}{16}}
+\setbeamerfont{framesubtitle}{size=\small}
+
+% --- Math/Statistics commands ---
+
+% Add a reference number to a single line of a multi-line equation
+% Usage: "\numberthis\label{labelNameHere}" in an align or gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Shortcut for bold text in math mode, e.g. $\b{X}$
+\let\b\mathbf
+
+% Shortcut for bold Greek letters, e.g. $\bg{\beta}$
+\let\bg\boldsymbol
+
+% Shortcut for calligraphic script, e.g. %\mc{M}$
+\let\mc\mathcal
+
+% \mathscr{(letter here)} is sometimes used to denote vector spaces
+\usepackage[mathscr]{euscript}
+
+% Convergence: right arrow with optional text on top
+% E.g. $\converge[p]$ for converges in probability
+\newcommand{\converge}[1][]{\xrightarrow{#1}}
+
+% Weak convergence: harpoon symbol with optional text on top
+% E.g. $\wconverge[n\to\infty]$
+\newcommand{\wconverge}[1][]{\stackrel{#1}{\rightharpoonup}}
+
+% Equality: equals sign with optional text on top
+% E.g. $X \equals[d] Y$ for equality in distribution
+\newcommand{\equals}[1][]{\stackrel{\smash{#1}}{=}}
+
+% Normal distribution: arguments are the mean and variance
+% E.g. $\normal{\mu}{\sigma}$
+\newcommand{\normal}[2]{\mathcal{N}\left(#1,#2\right)}
+
+% Uniform distribution: arguments are the left and right endpoints
+% E.g. $\unif{0}{1}$
+\newcommand{\unif}[2]{\text{Uniform}(#1,#2)}
+
+% Independent and identically distributed random variables
+% E.g. $ X_1,...,X_n \iid \normal{0}{1}$
+\newcommand{\iid}{\stackrel{\smash{\text{iid}}}{\sim}}
+
+% Sequences (this shortcut is mostly to reduce finger strain for small hands)
+% E.g. to write $\{A_n\}_{n\geq 1}$, do $\bk{A_n}{n\geq 1}$
+\newcommand{\bk}[2]{\{#1\}_{#2}}
+
+% Math mode symbols for common sets and spaces. Example usage: $\R$
+\newcommand{\R}{\mathbb{R}}		% Real numbers
+\newcommand{\C}{\mathbb{C}}		% Complex numbers
+\newcommand{\Q}{\mathbb{Q}}		% Rational numbers
+\newcommand{\Z}{\mathbb{Z}}     % Integers
+\newcommand{\N}{\mathbb{N}}     % Natural numbers
+\newcommand{\F}{\mathcal{F}}	% Calligraphic F for a sigma algebra
+\newcommand{\El}{\mathcal{L}}	% Calligraphic L, e.g. for L^p spaces
+
+% Math mode symbols for probability
+\newcommand{\pr}{\mathbb{P}}	% Probability measure
+\newcommand{\E}{\mathbb{E}}		% Expectation, e.g. $\E(X)$
+\newcommand{\var}{\text{Var}}	% Variance, e.g. $\var(X)$
+\newcommand{\cov}{\text{Cov}}	% Covariance, e.g. $\cov(X,Y)$
+\newcommand{\corr}{\text{Corr}}	% Correlation, e.g. $\corr(X,Y)$
+\newcommand{\B}{\mathcal{B}}	% Borel sigma-algebra
+
+% Other miscellaneous symbols
+\newcommand{\tth}{\text{th}}	% Non-italicized 'th', e.g. $n^\tth$
+\newcommand{\Oh}{\mathcal{O}}	% Big-O notation, e.g. $\O(n)$
+\newcommand{\1}{\mathds{1}}		% Indicator function, e.g. $\1_A$
+
+% Additional commands for math mode
+\DeclareMathOperator*{\argmax}{argmax}		% Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\argmin}{argmin}		% Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\spann}{Span}			% Span, e.g. $\spann\{X_1,...,X_n\}$
+\DeclareMathOperator*{\bias}{Bias}			% Bias, e.g. $\bias(\hat\theta)$
+\DeclareMathOperator*{\ran}{ran}			% Range of an operator, e.g. $\ran(T) 
+\DeclareMathOperator*{\dv}{d\!}				% Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
+\DeclareMathOperator*{\diag}{diag}			% Diagonal of a matrix, e.g. $\diag(M)$
+\DeclareMathOperator*{\trace}{trace}		% Trace of a matrix, e.g. $\trace(M)$
+\DeclareMathOperator*{\supp}{supp}			% Support of a function, e.g., $\supp(f)$
+
+% --- Document begins here ---
+
+\begin{document}
+
+% --- Title slide ---
+
+\title{Presentation Title}
+\author{Sara Venkatraman\\
+{\footnotesize Statistics and Data Science, Cornell University}}
+\date{\today}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- Main content ---
+
+% Example slide: use \pause to sequentially unveil content
+\begin{frame}{Mercer's theorem}
+\framesubtitle{Eigendecomposition of a kernel}
+A continuous function $K:([0,1]\times[0,1])\to\R$ is a \textit{kernel} if it is: \vspace{-0.4em}
+\pause
+\begin{itemize}
+\item Symmetric: $K(a,b)=K(b,a)$\pause
+\item Positive semi-definite: $$\sum_{i=1}^n\sum_{j=1}^nK(x_i,x_j)c_ic_j\geq 0$$ for all $x_1,...,x_n\in[0,1]$ and $c_1,...,c_n\in\R$
+\end{itemize}
+\pause 
+Now define an integral operator on $\El^2[0,1]$ using $K$:
+\begin{align*}
+(T_Kf)(x) = \int_0^1K(x,s)f(s)\dv s
+\end{align*}
+\end{frame}
+
+% Example slide 2: Image
+\begin{frame}{Example image}
+\begin{figure}[H]
+\centering\includegraphics[width=7cm]{ExampleImage}	
+\end{figure}
+\end{frame}
+
+% --- Bibliography slide ---
+
+\begin{frame}{References}
+\begin{thebibliography}{10}
+\beamertemplatearticlebibitems
+{\small
+
+\bibitem{Paper1}
+Paper 1 Title.
+\newblock Paper 1 Authors. \\
+{\it Journal Name} Edition, Year.
+
+\bibitem{Paper 2}
+Paper 2 Title.
+\newblock Paper 2 Authors.\\
+arXiv:1234.56789.
+}
+\end{thebibliography}
+\end{frame}
+
+% --- Presentation ends here ---
+
+\end{document}

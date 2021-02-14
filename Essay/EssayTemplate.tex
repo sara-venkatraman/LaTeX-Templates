@@ -1,0 +1,53 @@
+% --- LaTeX Essay Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 11pt]{article}
+
+% --- Package imports ---
+
+% lipsum is just for generating placeholder text and can be removed
+\usepackage{hyperref, lipsum} 
+
+% --- Fonts (Set to Palatino or Times New Roman if desired) ---
+
+% \usepackage{newpxtext, newpxmath}
+% \usepackage{times}
+
+% --- Page layout settiings ---
+
+% Set page margins
+\usepackage[left=1.2in, right=1.2in, top=.9in, bottom=.9in]{geometry}
+
+% Anchor footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{2mm}
+
+% --- Page formatting settings ---
+
+% Set link colors for labeled items and URLs (blue) 
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+% --- Document starts here ---
+
+\begin{document}
+
+% --- Essay title and author ---
+
+\begin{center}
+\textbf{Essay Title Here} \\
+Your name here (Affiliation)\bigskip
+\end{center}
+
+% --- Main text ---
+
+\lipsum[1-9]
+
+% --- Document ends here ---
+
+\end{document}

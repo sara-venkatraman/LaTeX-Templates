@@ -1,0 +1,223 @@
+% --- LaTeX Homework Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 11pt]{article}
+
+% --- Package imports ---
+
+\usepackage{
+  amsmath, amsthm, amssymb, mathtools, dsfont,		 % Math typesetting
+  graphicx, wrapfig, subfig, float,                  % Figures and graphics formatting
+  listings, color, inconsolata, pythonhighlight,     % Code formatting
+  fancyhdr, sectsty, hyperref, enumerate, enumitem } % Headers/footers, section fonts, links, lists
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=1.35in, right=1.35in, bottom=1in, top=1.1in, headsep=0.2in]{geometry}
+
+% Anchor footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{1.5mm}
+
+% Allow multi-line equations to break onto the next page
+\allowdisplaybreaks
+
+% Enumerated lists: make numbers flush left, with parentheses around them
+\setlist[enumerate]{wide=0pt, leftmargin=21pt, labelwidth=0pt, align=left}
+\setenumerate[1]{label={(\arabic*)}}
+
+% --- Page formatting settings ---
+
+% Set link colors for labeled items (blue) and citations (red)
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=red}
+
+% Make reference section title font smaller
+\renewcommand{\refname}{\large\bf{References}}
+
+% --- Settings for printing computer code ---
+
+% Define colors for green text (comments), grey text (line numbers),
+% and green frame around code
+\definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
+\definecolor{greyText}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codeFrame}{rgb}{0.5, 0.7, 0.5}
+
+% Define code settings
+\lstdefinestyle{code} {
+  frame=single, rulecolor=\color{codeFrame},          % Include a green frame around the code
+  numbers=left,										  % Include line numbers
+  numbersep=8pt,             						  % Add space between line numbers and frame
+  numberstyle=\tiny\color{greyText},                  % Line number font size (tiny) and color (grey)
+  commentstyle=\color{greenText},                     % Put comments in green text
+  basicstyle=\linespread{1.1}\ttfamily\footnotesize,  % Set code line spacing
+  keywordstyle=\ttfamily\footnotesize,                % No special formatting for keywords
+  showstringspaces=false,                             % No marks for spaces
+  xleftmargin=1.95em,								  % Align code frame with main text
+  framexleftmargin=1.6em,							  % Extend frame left margin to include line numbers
+  breaklines=true,									  % Wrap long lines of code
+  postbreak=\mbox{\textcolor{greenText}{$\hookrightarrow$}\space} % Mark wrapped lines with an arrow
+}
+
+% Set all code listings to be styled with the above settings
+\lstset{style=code}
+
+% --- Math/Statistics commands ---
+
+% Add a reference number to a single line of a multi-line equation
+% Usage: "\numberthis\label{labelNameHere}" in an align or gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Shortcut for bold text in math mode, e.g. $\b{X}$
+\let\b\mathbf
+
+% Shortcut for bold Greek letters, e.g. $\bg{\beta}$
+\let\bg\boldsymbol
+
+% Shortcut for calligraphic script, e.g. %\mc{M}$
+\let\mc\mathcal
+
+% \mathscr{(letter here)} is sometimes used to denote vector spaces
+\usepackage[mathscr]{euscript}
+
+% Convergence: right arrow with optional text on top
+% E.g. $\converge[w]$ for weak convergence
+\newcommand{\converge}[1][]{\xrightarrow{#1}}
+
+% Normal distribution: arguments are the mean and variance
+% E.g. $\normal{\mu}{\sigma}$
+\newcommand{\normal}[2]{\mathcal{N}\left(#1,#2\right)}
+
+% Uniform distribution: arguments are the left and right endpoints
+% E.g. $\unif{0}{1}$
+\newcommand{\unif}[2]{\text{Uniform}(#1,#2)}
+
+% Independent and identically distributed random variables
+% E.g. $ X_1,...,X_n \iid \normal{0}{1}$
+\newcommand{\iid}{\stackrel{\smash{\text{iid}}}{\sim}}
+
+% Equality: equals sign with optional text on top
+% E.g. $X \equals[d] Y$ for equality in distribution
+\newcommand{\equals}[1][]{\stackrel{\smash{#1}}{=}}
+
+% Math mode symbols for common sets and spaces. Example usage: $\R$
+\newcommand{\R}{\mathbb{R}}		% Real numbers
+\newcommand{\C}{\mathbb{C}}		% Complex numbers
+\newcommand{\Q}{\mathbb{Q}}		% Rational numbers
+\newcommand{\Z}{\mathbb{Z}}     % Integers
+\newcommand{\N}{\mathbb{N}}     % Natural numbers
+\newcommand{\F}{\mathcal{F}}	% Calligraphic F for a sigma algebra
+\newcommand{\El}{\mathcal{L}}	% Calligraphic L, e.g. for L^p spaces
+
+% Math mode symbols for probability
+\newcommand{\pr}{\mathbb{P}}	% Probability measure
+\newcommand{\E}{\mathbb{E}}		% Expectation, e.g. $\E(X)$
+\newcommand{\var}{\text{Var}}	% Variance, e.g. $\var(X)$
+\newcommand{\cov}{\text{Cov}}	% Covariance, e.g. $\cov(X,Y)$
+\newcommand{\corr}{\text{Corr}}	% Correlation, e.g. $\corr(X,Y)$
+\newcommand{\B}{\mathcal{B}}	% Borel sigma-algebra
+
+% Other miscellaneous symbols
+\newcommand{\tth}{\text{th}}	% Non-italicized 'th', e.g. $n^\tth$
+\newcommand{\Oh}{\mathcal{O}}	% Big-O notation, e.g. $\O(n)$
+\newcommand{\1}{\mathds{1}}		% Indicator function, e.g. $\1_A$
+
+% Additional commands for math mode
+\DeclareMathOperator*{\argmax}{argmax}		% Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\argmin}{argmin}		% Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\spann}{Span}			% Span, e.g. $\spann\{X_1,...,X_n\}$
+\DeclareMathOperator*{\bias}{Bias}			% Bias, e.g. $\bias(\hat\theta)$
+\DeclareMathOperator*{\ran}{ran}			% Range of an operator, e.g. $\ran(T) 
+\DeclareMathOperator*{\dv}{d\!}				% Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
+\DeclareMathOperator*{\diag}{diag}			% Diagonal of a matrix, e.g. $\diag(M)$
+\DeclareMathOperator*{\trace}{trace}		% Trace of a matrix, e.g. $\trace(M)$
+
+% Numbered theorem, lemma, etc. settings - e.g., a definition, lemma, and theorem appearing in that 
+% order in Section 2 will be numbered Definition 2.1, Lemma 2.2, Theorem 2.3. 
+% Example usage: \begin{theorem}[Name of theorem] Theorem statement \end{theorem}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+% Un-numbered theorem, lemma, etc. settings
+% Example usage: \begin{lemma*}[Name of lemma] Lemma statement \end{lemma*}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem*{claim}{Claim}
+
+% --- Left/right header text (to appear on every page) ---
+
+% Include a line underneath the header, no footer line
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Left header text: course name/assignment number
+\lhead{STSCI 123 (Course name here) -- Homework 1}
+
+% Right header text: your name
+\rhead{Your name here}
+
+% --- Document starts here ---
+
+\begin{document}
+\subsection*{Question 1}
+Examples of custom commands: $X_1,...,X_n\iid\normal{\mu}{\sigma^2}$, $\trace(\b{H})=p$. Code example:
+
+\begin{lstlisting}[language=R, caption={Smoothed estimation of mean trajectory}, label={lst:Rcode}]
+# Compute the optimally-smoothed mean
+lambdaOpt <- 10^logLambda[which(estimationError == min(estimationError))]
+smoothOperatorOpt <- fdPar(bSplineBasis, int2Lfd(2), lambdaOpt) 
+smoothSpectrumOpt <- smooth.basis(logFreq, rawData, smoothOperatorOpt)
+smoothMeanOpt <- PhiMatrix %*% mean.fd(smoothSpectrumOpt$fd)$coefs
+
+# Plot data along unsmoothed mean and optimally-smoothed mean
+matplot(logFreq, rawData, type="l", col=brewer.pal(8, "Set2"), xlab="Log frequency", ylab="Log power spectrum", main="Raw data with optimally-smoothed and\n unsmoothed means")
+lines(logFreq, unsmoothedMean, lwd=2.5, col="firebrick3")
+lines(logFreq, smoothMeanOpt, lwd=2.5, col="blue3")
+\end{lstlisting}
+
+\begin{theorem*}[Leibniz integral rule]
+Let $f(x,t)$ and its partial derivative $\frac{\partial}{\partial x}f(x,t)$ be continuous in $x$ and $t$ in some region of the $(x,t)$ plane that includes $a(x)\leq t\leq b(x)$ and $x_0\leq x\leq x_1$. Suppose also that the functions $a(x)$ and $b(x)$ are continuous and have continuous derivatives for $x_0\leq x\leq x_1$. Then, for $x_0\leq x\leq x_1$, we have:
+$$\frac{\dv}{\dv x}\int_{a(x)}^{b(x)}f(x,t)\dv t = f(x,b(x))\cdot \frac{\dv}{\dv x} b(x) - f(x, a(x))\cdot \frac{\dv}{\dv x}a(x) + \int_{a(x)}^{b(x)}\frac{\partial}{\partial x}f(x,t)\dv t$$
+If $a(x)=a$ and $b(x)=b$, where $a$ and $b$ are constants, then the above reduces to:
+$$\frac{\dv}{\dv x}\int_{a}^{b}f(x,t)\dv t = \int_a^b\frac{\partial}{\partial x}f(x,t)\dv t$$
+\end{theorem*}
+
+% --- Bibliography ---
+
+% Start a bibliography with two items, a book and a webpage
+% To include a citation, use "\cite{book1}".
+\begin{thebibliography}{2}
+
+\bibitem{book1}
+  Last name, first name.
+  \textit{Book Title}.
+  Publisher, Year.
+  Print.
+
+\bibitem{webpage1}
+  Last name, first name. ``Webpage Title''.
+  Website name, Organization name.
+  Online; accessed Month Date, Year. 
+  \texttt{www.URLhere.com}
+
+\end{thebibliography}
+
+% --- Document ends here ---
+
+\end{document}

@@ -1,28 +1,38 @@
 # LaTeX Templates
 
-Suggestions for improvement are welcome. Also, [here is a website](https://www.tablesgenerator.com) which can generate LaTeX code for tables.
+This repository contains commented LaTeX templates I've written for a CV, lecture notes, homework, research/expository papers, and essays. Custom commands and shortcuts for commonly-used symbols in statistics and math are included in the templates for notes, homework, and research, and are explained in the comments with examples. 
+
+Additionally, [here is a website](https://www.tablesgenerator.com) which can generate LaTeX code for tables.
+
+### CV (Version 1)
+
+<img src="https://user-images.githubusercontent.com/6864298/107891491-f82d7d00-6eec-11eb-9f55-6bacdb086ff9.png" width="700"/>
+
+### CV (Version 2)
+
+Also available in the Overleaf template gallery [here](https://www.overleaf.com/latex/templates/academic-cv-template/xykxmjmkxxjm). 
+
+<img src="https://user-images.githubusercontent.com/6864298/107891748-a0901100-6eee-11eb-8e7d-330ef17d61b2.png" width="700"/>
+
+### Lecture notes
+
+<img src="https://user-images.githubusercontent.com/6864298/107891574-873a9500-6eed-11eb-9d8c-2632552973af.png" width="450"/>
+<img src="https://user-images.githubusercontent.com/6864298/107891575-87d32b80-6eed-11eb-8f52-c2ab94535e8d.png" width="452"/>
+
+### Homework
+
+<img src="https://user-images.githubusercontent.com/6864298/107891781-c7e6de00-6eee-11eb-82d6-9c3fe1d8cbb5.png" width="700"/>
+
+### Research or expository paper
+
+<img src="https://user-images.githubusercontent.com/6864298/107891654-07f99100-6eee-11eb-9407-3a9d8a8aa487.png" width="700"/>
+
+### Essay
+
+<img src="https://user-images.githubusercontent.com/6864298/107891674-265f8c80-6eee-11eb-9615-8672fb25ea40.png" width="700"/>
+
+### Presentation
+
+<img src="https://user-images.githubusercontent.com/6864298/107891692-44c58800-6eee-11eb-97bb-b84255f610b8.png" width="700"/>
 
 
-### Examples
-
-
-**Homework**
-
-<kbd><a href="#"><img src="https://user-images.githubusercontent.com/6864298/50462121-2b010980-0951-11e9-8afa-55f683865f0a.png" width="535"></kbd></a>
-
-<!---<a href="#"><img src="https://user-images.githubusercontent.com/6864298/50462122-2b99a000-0951-11e9-908c-36710d13519f.png" width="535" style="border:1px solid black"/></a>--->
-
-
-**Research paper/project**
-
-<kbd><a href="#"><img src="https://user-images.githubusercontent.com/6864298/50461912-df9a2b80-094f-11e9-8fa2-edac64ef2a9e.png" width="535"/></kbd></a>
-
-
-**CV**
-
-<kbd><a href="#"><img src="https://user-images.githubusercontent.com/6864298/50462065-d5c4f800-0950-11e9-8db9-bf004d04c211.png" width="535"/></kbd></a>
-
-
-**Essay**
-
-<kbd><a href="#"><img src="https://user-images.githubusercontent.com/6864298/50462050-c180fb00-0950-11e9-9880-a7f19ee26d3f.png" width="535"/></kbd></a>

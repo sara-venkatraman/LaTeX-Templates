@@ -1,0 +1,199 @@
+% -- (S. Venkatraman LaTeX Template) --
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 11pt]{article}
+
+% --- Package imports ---
+
+\usepackage{
+  amsmath, amsthm, amssymb, mathtools, dsfont, units,   % Math typesetting
+  graphicx, wrapfig, subfig, float,                     % Figures and graphics formatting
+  listings, color, inconsolata, pythonhighlight,        % Code formatting
+  fancyhdr, sectsty, hyperref, enumerate, enumitem }   	% Headers/footers, section fonts, links, lists
+
+% lipsum is just for generating placeholder text and can be removed
+\usepackage{lipsum}
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=1.35in, right=1.35in, top=1.1in, bottom=1in, headsep=.2in]{geometry}
+
+% Anchor footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.12}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{1.5mm}
+
+% Allow multi-line equations to break onto the next page
+\allowdisplaybreaks
+
+% --- Page formatting settings ---
+
+% Set font sizes for section and subsection titles
+\sectionfont{\fontsize{13}{15}\selectfont}
+\subsectionfont{\fontsize{11}{15}\selectfont}
+
+% Set reference section title font size the same as the section font size
+\renewcommand{\refname}{\fontsize{13}{15}\selectfont\bf{References}}
+
+% Set link colors for labeled items and citations (blue) and citations (red)
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue}
+
+% Abstract settings
+\renewenvironment{abstract}
+{\small\begin{quote}\noindent \par{\sc \abstractname.}}
+{\noindent\end{quote}}
+
+% --- Settings for printing computer code ---
+
+% Define colors for green text (comments), grey text (line numbers),
+% green frame around code, 
+\definecolor{greenText}{rgb}{0.5, 0.7, 0.5}
+\definecolor{greyText}{rgb}{0.5, 0.5, 0.5}
+\definecolor{codeFrame}{rgb}{0.5, 0.7, 0.5}
+
+% Define code settings
+\lstdefinestyle{code} {
+  frame=single, rulecolor=\color{codeFrame},          % Include a green frame around the code
+  numbers=left,										  % Include line numbers
+  numbersep=8pt,             						  % Add space between line numbers and frame
+  numberstyle=\tiny\color{greyText},                  % Line number font size (tiny) and color (grey)
+  commentstyle=\color{greenText},                     % Put comments in green text
+  basicstyle=\linespread{1.1}\ttfamily\footnotesize,  % Set code line spacing
+  keywordstyle=\ttfamily\footnotesize,                % No special formatting for keywords
+  showstringspaces=false,                             % No marks for spaces
+  xleftmargin=1.95em,								  % Align code frame with main text
+  framexleftmargin=1.6em,							  % Extend frame left margin to include line numbers
+  breaklines=true,									  % Wrap long lines of code
+  postbreak=\mbox{\textcolor{greenText}{$\hookrightarrow$}\space} % Mark wrapped lines with an arrow
+}
+
+% Set all code listings to be styled with the above settings
+\lstset{style=code}
+
+% --- Math/Statistics commands ---
+
+% Add a reference number to a single line of a multi-line equation
+% Usage: "\numberthis\label{labelNameHere}" in an align or gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Shortcut for bold text in math mode, e.g. $\b{X}$
+\let\b\mathbf
+
+% Shortcut for bold Greek letters, e.g. $\bg{\beta}$
+\let\bg\boldsymbol
+
+% Shortcut for calligraphic script, e.g. %\mc{M}$
+\let\mc\mathcal
+
+% \mathscr{(letter here)} is sometimes used to denote vector spaces
+\usepackage[mathscr]{euscript}
+
+% Convergence: right arrow with optional text on top
+% E.g. $\converge[w]$ for weak convergence
+\newcommand{\converge}[1][]{\xrightarrow{#1}}
+
+% Normal distribution: arguments are the mean and variance
+% E.g. $\normal{\mu}{\sigma}$
+\newcommand{\normal}[2]{\mathcal{N}\left(#1,#2\right)}
+
+% Uniform distribution: arguments are the left and right endpoints
+% E.g. $\unif{0}{1}$
+\newcommand{\unif}[2]{\text{Uniform}(#1,#2)}
+
+% Independent and identically distributed random variables
+% E.g. $ X_1,...,X_n \iid \normal{0}{1}$
+\newcommand{\iid}{\stackrel{\smash{\text{iid}}}{\sim}}
+
+% Equality: equals sign with optional text on top
+% E.g. $X \equals[d] Y$ for equality in distribution
+\newcommand{\equals}[1][]{\stackrel{\smash{#1}}{=}}
+
+% Math mode symbols for common sets and spaces. Example usage: $\R$
+\newcommand{\R}{\mathbb{R}}		% Real numbers
+\newcommand{\C}{\mathbb{C}}		% Complex numbers
+\newcommand{\Q}{\mathbb{Q}}		% Rational numbers
+\newcommand{\Z}{\mathbb{Z}}     % Integers
+\newcommand{\N}{\mathbb{N}}     % Natural numbers
+\newcommand{\F}{\mathcal{F}}	% Calligraphic F for a sigma algebra
+\newcommand{\El}{\mathcal{L}}	% Calligraphic L, e.g. for L^p spaces
+
+% Math mode symbols for probability
+\newcommand{\pr}{\mathbb{P}}	% Probability measure
+\newcommand{\E}{\mathbb{E}}		% Expectation, e.g. $\E(X)$
+\newcommand{\var}{\text{Var}}	% Variance, e.g. $\var(X)$
+\newcommand{\cov}{\text{Cov}}	% Covariance, e.g. $\cov(X,Y)$
+\newcommand{\corr}{\text{Corr}}	% Correlation, e.g. $\corr(X,Y)$
+\newcommand{\B}{\mathcal{B}}	% Borel sigma-algebra
+
+% Other miscellaneous symbols
+\newcommand{\tth}{\text{th}}	% Non-italicized 'th', e.g. $n^\tth$
+\newcommand{\Oh}{\mathcal{O}}	% Big-O notation, e.g. $\O(n)$
+\newcommand{\1}{\mathds{1}}		% Indicator function, e.g. $\1_A$
+
+% Additional commands for math mode
+\DeclareMathOperator*{\argmax}{argmax}		% Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\argmin}{argmin}		% Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\spann}{Span}			% Span, e.g. $\spann\{X_1,...,X_n\}$
+\DeclareMathOperator*{\bias}{Bias}			% Bias, e.g. $\bias(\hat\theta)$
+\DeclareMathOperator*{\ran}{ran}			% Range of an operator, e.g. $\ran(T) 
+\DeclareMathOperator*{\dv}{d\!}				% Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
+\DeclareMathOperator*{\diag}{diag}			% Diagonal of a matrix, e.g. $\diag(M)$
+\DeclareMathOperator*{\trace}{trace}		% Trace of a matrix, e.g. $\trace(M)$
+
+% Numbered theorem, lemma, etc. settings - e.g., a definition, lemma, and theorem appearing in that 
+% order in Section 2 will be numbered Definition 2.1, Lemma 2.2, Theorem 2.3. 
+% Example usage: \begin{theorem}[Name of theorem] Theorem statement \end{theorem}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+% --- Left/right header text (to appear on every page) ---
+
+% Do not include a line under header or above footer
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+
+% Center header text: short paper title
+\chead{\it\footnotesize Short paper title here}
+
+% Empty left and right header text
+\lhead{}\rhead{}
+
+% --- Document starts here ---
+
+\begin{document}
+
+% --- Title, author, date ---
+
+\title{\normalsize\MakeUppercase{\bfseries 
+Paper title here}}
+\author{\small\MakeUppercase{
+Your name here}}
+\date{\footnotesize\MakeUppercase\today}
+\maketitle
+\vspace{-1cm}
+
+% --- Main content: import sections as subfiles ---
+
+\input{TeX/Abstract}
+\input{TeX/Introduction}
+
+% --- Bibliography ---
+
+\bibliography{TeX/References}
+\bibliographystyle{apalike2}
+
+% --- Document ends here ---
+
+\end{document}

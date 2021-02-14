@@ -1,8 +1,4 @@
-*.tex~
-*.pdf
-*.png
-*.aux
-*.log
-*.out
+/Screenshots
 *.html
+*.texpadtmp
 .DS_Store
