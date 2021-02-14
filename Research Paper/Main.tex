@@ -1,4 +1,4 @@
-% -- (S. Venkatraman LaTeX Template) --
+% --- LaTeX Research Paper Template - S. Venkatraman ---
 
 % --- Set document class and font size ---
 
@@ -59,17 +59,17 @@
 
 % Define code settings
 \lstdefinestyle{code} {
-  frame=single, rulecolor=\color{codeFrame},          % Include a green frame around the code
-  numbers=left,										  % Include line numbers
-  numbersep=8pt,             						  % Add space between line numbers and frame
-  numberstyle=\tiny\color{greyText},                  % Line number font size (tiny) and color (grey)
-  commentstyle=\color{greenText},                     % Put comments in green text
-  basicstyle=\linespread{1.1}\ttfamily\footnotesize,  % Set code line spacing
-  keywordstyle=\ttfamily\footnotesize,                % No special formatting for keywords
-  showstringspaces=false,                             % No marks for spaces
-  xleftmargin=1.95em,								  % Align code frame with main text
-  framexleftmargin=1.6em,							  % Extend frame left margin to include line numbers
-  breaklines=true,									  % Wrap long lines of code
+  frame=single, rulecolor=\color{codeFrame},            % Include a green frame around the code
+  numbers=left,                                         % Include line numbers
+  numbersep=8pt,                                        % Add space between line numbers and frame
+  numberstyle=\tiny\color{greyText},                    % Line number font size (tiny) and color (grey)
+  commentstyle=\color{greenText},                       % Put comments in green text
+  basicstyle=\linespread{1.1}\ttfamily\footnotesize,    % Set code line spacing
+  keywordstyle=\ttfamily\footnotesize,                  % No special formatting for keywords
+  showstringspaces=false,                               % No marks for spaces
+  xleftmargin=1.95em,                                   % Align code frame with main text
+  framexleftmargin=1.6em,                               % Extend frame left margin to include line numbers
+  breaklines=true,                                      % Wrap long lines of code
   postbreak=\mbox{\textcolor{greenText}{$\hookrightarrow$}\space} % Mark wrapped lines with an arrow
 }
 
@@ -115,21 +115,21 @@
 \newcommand{\equals}[1][]{\stackrel{\smash{#1}}{=}}
 
 % Math mode symbols for common sets and spaces. Example usage: $\R$
-\newcommand{\R}{\mathbb{R}}		% Real numbers
-\newcommand{\C}{\mathbb{C}}		% Complex numbers
-\newcommand{\Q}{\mathbb{Q}}		% Rational numbers
-\newcommand{\Z}{\mathbb{Z}}     % Integers
-\newcommand{\N}{\mathbb{N}}     % Natural numbers
-\newcommand{\F}{\mathcal{F}}	% Calligraphic F for a sigma algebra
-\newcommand{\El}{\mathcal{L}}	% Calligraphic L, e.g. for L^p spaces
+\newcommand{\R}{\mathbb{R}}   % Real numbers
+\newcommand{\C}{\mathbb{C}}   % Complex numbers
+\newcommand{\Q}{\mathbb{Q}}   % Rational numbers
+\newcommand{\Z}{\mathbb{Z}}   % Integers
+\newcommand{\N}{\mathbb{N}}   % Natural numbers
+\newcommand{\F}{\mathcal{F}}  % Calligraphic F for a sigma algebra
+\newcommand{\El}{\mathcal{L}} % Calligraphic L, e.g. for L^p spaces
 
 % Math mode symbols for probability
-\newcommand{\pr}{\mathbb{P}}	% Probability measure
-\newcommand{\E}{\mathbb{E}}		% Expectation, e.g. $\E(X)$
-\newcommand{\var}{\text{Var}}	% Variance, e.g. $\var(X)$
-\newcommand{\cov}{\text{Cov}}	% Covariance, e.g. $\cov(X,Y)$
-\newcommand{\corr}{\text{Corr}}	% Correlation, e.g. $\corr(X,Y)$
-\newcommand{\B}{\mathcal{B}}	% Borel sigma-algebra
+\newcommand{\pr}{\mathbb{P}}    % Probability measure
+\newcommand{\E}{\mathbb{E}}     % Expectation, e.g. $\E(X)$
+\newcommand{\var}{\text{Var}}   % Variance, e.g. $\var(X)$
+\newcommand{\cov}{\text{Cov}}   % Covariance, e.g. $\cov(X,Y)$
+\newcommand{\corr}{\text{Corr}} % Correlation, e.g. $\corr(X,Y)$
+\newcommand{\B}{\mathcal{B}}    % Borel sigma-algebra
 
 % Other miscellaneous symbols
 \newcommand{\tth}{\text{th}}	% Non-italicized 'th', e.g. $n^\tth$
@@ -137,14 +137,14 @@
 \newcommand{\1}{\mathds{1}}		% Indicator function, e.g. $\1_A$
 
 % Additional commands for math mode
-\DeclareMathOperator*{\argmax}{argmax}		% Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
-\DeclareMathOperator*{\argmin}{argmin}		% Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
-\DeclareMathOperator*{\spann}{Span}			% Span, e.g. $\spann\{X_1,...,X_n\}$
-\DeclareMathOperator*{\bias}{Bias}			% Bias, e.g. $\bias(\hat\theta)$
-\DeclareMathOperator*{\ran}{ran}			% Range of an operator, e.g. $\ran(T) 
-\DeclareMathOperator*{\dv}{d\!}				% Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
-\DeclareMathOperator*{\diag}{diag}			% Diagonal of a matrix, e.g. $\diag(M)$
-\DeclareMathOperator*{\trace}{trace}		% Trace of a matrix, e.g. $\trace(M)$
+\DeclareMathOperator*{\argmax}{argmax}    % Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\argmin}{argmin}    % Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\spann}{Span}       % Span, e.g. $\spann\{X_1,...,X_n\}$
+\DeclareMathOperator*{\bias}{Bias}        % Bias, e.g. $\bias(\hat\theta)$
+\DeclareMathOperator*{\ran}{ran}          % Range of an operator, e.g. $\ran(T) 
+\DeclareMathOperator*{\dv}{d\!}           % Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
+\DeclareMathOperator*{\diag}{diag}        % Diagonal of a matrix, e.g. $\diag(M)$
+\DeclareMathOperator*{\trace}{trace}      % Trace of a matrix, e.g. $\trace(M)$
 
 % Numbered theorem, lemma, etc. settings - e.g., a definition, lemma, and theorem appearing in that 
 % order in Section 2 will be numbered Definition 2.1, Lemma 2.2, Theorem 2.3. 
