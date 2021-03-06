@@ -6,6 +6,9 @@
 
 % --- Package imports ---
 
+% Extended set of colors
+\usepackage[dvipsnames]{xcolor}
+
 \usepackage{
   amsmath, amsthm, amssymb, mathtools, dsfont, units,          % Math typesetting
   graphicx, wrapfig, subfig, float,                            % Figures and graphics formatting
@@ -42,7 +45,7 @@
 \usepackage[font={it,footnotesize}]{caption}
 
 % Set link colors for labeled items (blue), citations (red), URLs (orange)
-\hypersetup{colorlinks=true, linkcolor=blue, citecolor=red, urlcolor=orange}
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, citecolor=RedOrange, urlcolor=ForestGreen}
 
 % Set font size for section titles (\large) and subtitles (\normalsize) 
 \usepackage{titlesec}
@@ -165,6 +168,18 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Un-numbered theorem, lemma, etc. settings
+% Example usage: \begin{lemma*}[Name of lemma] Lemma statement \end{lemma*}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{claim}{Claim}
 
 % --- Left/right header text (to appear on every page) ---
 
