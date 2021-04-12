@@ -17,13 +17,31 @@
 % Set left and right text margins
 \setbeamersize{text margin left=12mm, text margin right=12mm}
 
-% --- Slide formatting settings ---
+% --- Color and font settings ---
 
-% Set beige color for background of slide title and dark red
-% color for slide title font
 \usepackage{xcolor}
-\definecolor{background}{HTML}{F7F2E0}
-\definecolor{titleText}{HTML}{B40404}
+
+% Slide title background color
+\definecolor{background}{HTML}{e4ede4}
+
+% Slide title text color
+\definecolor{titleText}{HTML}{2e592f}
+
+% Other possible color schemes
+
+% - Beige/Red -
+%\definecolor{background}{HTML}{ede6d8}
+%\definecolor{titleText}{HTML}{B40404}
+
+% - Light blue/dark blue -
+%\definecolor{background}{HTML}{d5d9e8}
+%\definecolor{titleText}{HTML}{2d375e}
+
+% - Beige/dark blue -
+%\definecolor{background}{HTML}{e8e2d5}
+%\definecolor{titleText}{HTML}{2d3375}
+
+% Set colors
 \setbeamercolor{frametitle}{bg=background, fg=titleText}
 \setbeamercolor{subtitle}{fg=titleText}
 
