@@ -2,9 +2,11 @@
 
 This repository contains commented LaTeX templates I've written for a CV, lecture notes, homework, research/expository papers, and essays. Custom commands and shortcuts for commonly-used symbols in statistics and math are included in the templates for notes, homework, and research, and are explained in the comments with examples. 
 
-Additionally, [here is a website](https://www.tablesgenerator.com) which can generate LaTeX code for tables.
+Additionally, [here is a website](https://www.tablesgenerator.com) that can generate LaTeX code for tables.
 
 ### CV (Version 1)
+
+Also available in the Overleaf template gallery [here](https://www.overleaf.com/latex/templates/academic-cv-template/vqghvksnqdhv).
 
 <a href="#"><img src="https://user-images.githubusercontent.com/6864298/107891491-f82d7d00-6eec-11eb-9f55-6bacdb086ff9.png" width="700"/></a>
 
@@ -32,6 +34,8 @@ Also available in the Overleaf template gallery [here](https://www.overleaf.com/
 <a href="#"><img src="https://user-images.githubusercontent.com/6864298/107891674-265f8c80-6eee-11eb-9615-8672fb25ea40.png" width="700"/></a>
 
 ### Presentation
+
+Also available in the Overleaf template gallery [here](https://www.overleaf.com/latex/templates/simple-presentation-template/hjyxmjpzggbf).
 
 <a href="#"><img src="https://user-images.githubusercontent.com/6864298/107891692-44c58800-6eee-11eb-97bb-b84255f610b8.png" width="700"/></a>
 
