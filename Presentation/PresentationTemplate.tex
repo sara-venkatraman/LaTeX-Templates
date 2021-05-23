@@ -9,6 +9,9 @@
 % Make content that is hidden by pauses "transparent"
 \setbeamercovered{transparent}
 
+% Import package for indicator function symbol
+\usepackage{dsfont}
+
 % --- Slide layout settings ---
 
 % Set line spacing
@@ -35,7 +38,7 @@
 \usepackage{xcolor}
 
 % Slide title background color
-\definecolor{background}{HTML}{ede6d8}
+\definecolor{background}{HTML}{edebe4}
 
 % Slide title text color
 \definecolor{titleText}{HTML}{B40404}
@@ -51,7 +54,7 @@
 %\definecolor{titleText}{HTML}{2d375e}
 
 % - Beige/dark blue -
-%\definecolor{background}{HTML}{e8e2d5}
+%\definecolor{background}{HTML}{edebe4}
 %\definecolor{titleText}{HTML}{2d3375}
 
 % Set colors
@@ -150,7 +153,7 @@
 \title{\color{titleText}Presentation title here}
 \subtitle{\color{Blue}Subtitle here (e.g., name of conference)}
 \author{Sara Venkatraman\vspace{-.3cm}}
-\institute{Cornell University, Statistics and Data Science}
+\institute{\small Cornell University, Statistics and Data Science}
 \date{}
 
 \begin{frame}
@@ -173,7 +176,7 @@ A continuous function $K:([0,1]\times[0,1])\to\R$ is a \textit{kernel} if it is:
 \pause
 \begin{itemize}
 \item Symmetric: $K(a,b)=K(b,a)$\pause
-\item Positive semi-definite: $$\sum_{i=1}^n\sum_{j=1}^nK(x_i,x_j)c_ic_j\geq 0$$ for all $x_1,...,x_n\in[0,1]$ and $c_1,...,c_n\in\R$
+\item Positive semi-definite: $$\sum_{i=1}^n\sum_{j=1}^nK(x_i,x_j)c_ic_j\geq 0$$ for all $ x_1,...,x_n\in[0,1]$ and $c_1,...,c_n\in\R$
 \end{itemize}
 \pause 
 Now define an integral operator on $\El^2[0,1]$ using $K$:
