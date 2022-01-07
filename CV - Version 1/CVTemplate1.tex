@@ -2,82 +2,41 @@
 
 % --- Set document class and font size ---
 
-\documentclass[letterpaper, 11pt]{article}
+\documentclass[letterpaper, 10pt]{article}
 
 % --- Package imports ---
 
-\usepackage{hyperref, enumitem, longtable, amsmath, array}
+\usepackage{hyperref, amsmath}
 
 % --- Page layout settings ---
 
 % Set page margins
-\usepackage[left=0.7in, right=0.8in, bottom=.7in, top=0.7in, headsep=0in, footskip=.2in]{geometry}
+\usepackage[top=0.8in, bottom=0.8in, outer=1in, inner=2.1in, marginparwidth=1in, marginparsep=0.8cm]{geometry}
 
 % Set line spacing
-\renewcommand{\baselinestretch}{1.23}
+\renewcommand{\baselinestretch}{1.4}
+
+% Use left-hand margins for dates
+\usepackage{marginnote}
+\reversemarginpar
 
 % --- Page formatting settings ---
 
 % Set link colors
 \usepackage[dvipsnames]{xcolor}
-\definecolor{darkblue}{HTML}{1c468a}
-\hypersetup{colorlinks=true, linkcolor=darkblue, urlcolor=darkblue}
+\hypersetup{colorlinks=true, linkcolor=Blue, urlcolor=Blue}
 
-% Set font to Libertine, including math support
-\usepackage{libertine}
-\usepackage[libertine]{newtxmath}
+% Set font
+\usepackage{palatino}
+
+% Remove paragraph indentation
+\setlength{\parindent}{0pt}
+
+% Define font size and color for section headings
+\newcommand{\heading}[1]{{\Large\color{Mahogany} #1}\medskip}
 
 % Remove page numbering
 \pagenumbering{gobble}
-
-% Define font size and color for section headings
-\newcommand{\headingfont}{\Large\color{OliveGreen}}
-
-% --- CV section settings ---
-
-% Note: each section of this CV is stored in a two-column table. The
-% left-hand column is narrow (1 inch) and stores dates. The right-hand
-% column is wide (5.4 inches) and stores the main text.  Sections in
-% which each entry might have multiple lines (e.g., Education) are put
-% in a 'SectionTable' environment. Sections in which each entry might
-% have just one line (e.g., Awards) are put in a 'SectionTableSingleSpace'
-% environment. The only difference between the two environments is the line 
-% spacing between each entry. Both environments take one argument, which 
-% is the title of the section. See main document for how these
-% environments are used.
-
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}                                                                                                                                                              
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}                                                                                                                                                              
-
-\newenvironment{sectiontable}[1]{
-	\renewcommand*{\arraystretch}{1.6}
-	\setlength{\tabcolsep}{10pt}
-	\begin{longtable}[r]{R{1in} L{5.4in}} & #1 \\}
-{\end{longtable}\vspace{-.3cm}}
-
-\newenvironment{sectiontablesinglespace}[1]{
-	\renewcommand*{\arraystretch}{1.3}
-	\setlength{\tabcolsep}{10pt}
-	\begin{longtable}[r]{R{1in} L{5.4in}} & #1 \\[.5em]}
-{\end{longtable}\vspace{-.3cm}}
-
-% Define left- and right-hand columns
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}                                                                                                                                                              
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}                                                                                                                                                              
-
-% Define 'SectionTable' environment
-\newenvironment{SectionTable}[1]{
-	\renewcommand*{\arraystretch}{1.6}
-	\setlength{\tabcolsep}{10pt}
-	\begin{longtable}[r]{R{1in} L{5.4in}} & #1 \\}
-{\end{longtable}\vspace{-.3cm}}
-
-% Define 'SectionTableSingleSpace' environment
-\newenvironment{SectionTableSingleSpace}[1]{
-	\renewcommand*{\arraystretch}{1.3}
-	\setlength{\tabcolsep}{10pt}
-	\begin{longtable}[r]{R{1in} L{5.4in}} & #1 \\[.5em]}
-{\end{longtable}\vspace{-.3cm}}
 
 % --- Document starts here ---
 
@@ -85,193 +44,201 @@
 
 % --- Name and contact information ---
 
-\begin{SectionTable}{\Huge Your name here} & 
-email@cornell.edu   $\;\boldsymbol{\cdot}\;$ 
-www.yourwebsite.com $\;\boldsymbol{\cdot}\;$ 
-314-159-2654 \newline
-Citizenship: Country
-\end{SectionTable}
+{\huge\bf Your name here}\medskip
+ 
+\href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{www.yourwebsite.com} $\;\boldsymbol{\cdot}\;$
+email@cornell.edu $\;\boldsymbol{\cdot}\;$ 
+Citizenship: USA
 
-% --- Section: Research interests ---
+Last updated: \today
 
-\begin{SectionTable}{\headingfont Research interests}
-& Your favorite topic, another topic, another topic, another topic, another topic
-\end{SectionTable}
+\bigskip\bigskip
 
-% --- Section: Education ---
+% --- Research interests ---
 
-\begin{SectionTable}{\headingfont Education}
-2019 -- Present & 
-\textbf{University 1} -- City, State \newline
-PhD in Subject \newline 
-Mentors: Professors A, B. GPA: X.YZ. \\
+\heading{Research interests}
 
-2017 -- 2019 & 
-\textbf{University 2} -- City, State \newline
-MA in Subject \newline 
-Mentors: Professors C, D. GPA: X.YZ. \\
+Your favorite topic, another topic, another topic
 
-2013 -- 2017 & 
-\textbf{University 1} -- City, State \newline
-BA in Subject 1, minor in Subject 2\newline 
-Mentors: Professors E, F. GPA: X.YZ. \\
+\bigskip\bigskip
 
-% --- Un-comment the next few lines if you want to include some courses you've taken ---
+% --- Education ---
 
-%& \textbf{Selected coursework}
-%\begin{itemize}[itemsep=0pt, leftmargin=*]
-%\item \textit{Statistics}: Asymptotic statistics, Mathematical statistics, Functional data analysis, High-dimensional statistics, Information theory
-%\item \textit{Mathematics}: Measure theory, Functional analysis, Measure-theoretic probability with martingales
-%\end{itemize}
+\heading{Education}
 
-\end{SectionTable}
+\marginnote{2019 -- Present} 
+\textbf{University 1} -- City, State \\
+PhD in Subject \\
+Advisors: Professors A, B \medskip
 
-% --- Section: Awards, scholarships, etc ---
+\marginnote{2017 -- 2019} 
+\textbf{University 2} -- City, State \\
+MA in Subject \\
+Advisors: Professors C, D \medskip
 
-\begin{SectionTableSingleSpace}{\headingfont Honors and scholarships}
-2021 & 
-Award 1 (Organization that gave you the award)\newline
-\textit{Maybe this award needs a short description}. \\
+\marginnote{2013 -- 2017}
+\textbf{University 3} -- City, State \\
+BA in Subject 1, minor in Subject 2
 
-2020 &
-Award 2 (Organization that gave you the award; \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{link if you want}) \\
+\bigskip\bigskip
 
-2019 &
-Award 3 (Organization that gave you the award) \\
+% --- Awards ---
 
-2018 &
-Award 4 (Organization that gave you the award) \\
+\heading{Awards}
 
-2017 &
-Award 5 (Organization that gave you the award)
-\end{SectionTableSingleSpace}
+\marginnote{2021} Award 1 (Organization that gave the award). \textit{Short description here.}
 
-% --- Section: Publications ---
+\marginnote{2020} Award 2 (Organization that gave the award). \textit{Short description here.}
 
-\begin{SectionTable}{\headingfont Publications} 
-2021 & 
-\textbf{Title of your most recent research paper} \newline
-First author, second author, third author, fourth author. \newline
-\textit{Journal of something or the other}. \\
+\marginnote{2019} Award 3 (Organization that gave the award). \textit{Short description here.}
 
-2020 & 
-\textbf{Title of your second most recent research paper} \newline
-First author, second author, third author, fourth author. \newline
-\textit{Journal of something or the other}. \\
+\marginnote{2018} Award 4 (Organization that gave the award). \textit{Short description here.}
 
-2020 & 
-\textbf{Title of your third most recent research paper} \newline
-First author, second author, third author, fourth author. \newline
-\textit{Journal of something or the other}.
-\end{SectionTable}
+\bigskip\bigskip
 
-% --- Section: Research experience ---
+% --- Publications and preprints ---
 
-\begin{SectionTable}{\headingfont Research experience}
-Month Year -- Present &
-\textbf{Title of project or lab where research was conducted} \newline
-Mentors: Professor A (University). \newline
-Description of your work. Summary of findings available \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{here}. Sed dolor lacus, imperdiet non, ornare non, commodo eu, neque. Integer pretium semper justo. \\
+\heading{Publications and preprints} {\small \hfill * denotes first author(s)}
 
-Month Year -- Month Year &
-\textbf{Title of project or lab where research was conducted} \newline
-Mentors: Professor B (University). \newline
-Description of your work. Summary of findings available \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{here}. Sed dolor lacus, imperdiet non, ornare non, commodo eu, neque. Integer pretium semper justo. \\
-\end{SectionTable}
+\marginnote{2021} 
+\textbf{Title of your most recent research paper.} \\ 
+First author, second author, third author, fourth author. \\
+\textit{Submitted}. \medskip
 
-% --- Section: Teaching experience ---
+\marginnote{2021} 
+\textbf{Title of your second most recent research paper.} \\ 
+First author, second author, third author, fourth author. \\
+\textit{Journal or conference name}. \medskip
 
-\begin{SectionTable}{\headingfont Teaching experience}
-Fall 2020 & 
-\textbf{Teaching assistant, STAT 123: Course name here (University)} \newline
-Topics and description of your responsibilities. Aliquam volutpat est vel massa. Sed dolor lacus, imperdiet non, ornare non, commodo eu, neque. \newline
-\textit{Average student rating: X/5.} \\
+\marginnote{2020} 
+\textbf{Title of your third most recent research paper.} \\ 
+First author, second author, third author, fourth author. \\
+\textit{Journal or conference name}. \medskip
 
-Spring 2020 & 
-\textbf{Teaching assistant, MATH 234: Course name here (University)} \newline
-Topics and description of your responsibilities. Aliquam volutpat est vel massa. Sed dolor lacus, imperdiet non, ornare non, commodo eu, neque. \newline
-\textit{Average student rating: X/5.}
-\end{SectionTable}
+\marginnote{2020} 
+\textbf{Title of your fourth most recent research paper.} \\ 
+First author, second author, third author, fourth author. \\
+\textit{Journal or conference name}.
 
-% --- Section: Industry experience ---
+\bigskip\bigskip
 
-\begin{SectionTable}{\headingfont Industry experience}
-Summer 2020 &
-\textbf{Name of company (Title of job or internship)} -- City, State \newline
-Description of your responsibilities. Integer pretium semper justo. Proin risus. Nullam id quam. Nam neque. Phasellus at purus et lib ero lacinia dictum.  \\
+% --- Research experience ---
 
-Summer 2019 &
-\textbf{Name of company (Title of job or internship)} -- City, State \newline
-Description of your responsibilities. Integer pretium semper justo. Proin risus. Nullam id quam. Nam neque. Phasellus at purus et lib ero lacinia dictum.  \\
+\heading{Research experience}
 
-Summer 2018 &
-\textbf{Name of company (Title of job or internship)} -- City, State \newline
-Description of your responsibilities. Integer pretium semper justo. Proin risus. Nullam id quam. Nam neque. Phasellus at purus et lib ero lacinia dictum.  \\
-\end{SectionTable}
+\marginnote{2021 -- Present} 
+\textbf{Title of project or lab where research was conducted} \\
+Description of your work. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \medskip
 
-% --- Section: Talks and tutorials ---
+\marginnote{2020 -- 2021} 
+\textbf{Title of project or lab where research was conducted} \\
+Description of your work. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \medskip
 
-\begin{SectionTable}{\headingfont Talks and tutorials}
-Month Year &
-Title of your most recent presentation \newline
-\textit{Name of conference, workshop, seminar, etc., or a description} \\
+\bigskip\bigskip
 
-Month Year &
-Title of your second most recent presentation \newline
-\textit{Name of conference, workshop, seminar, etc., or a description}
-\end{SectionTable}
+% --- Presentations ---
 
-% --- Section: Mentorship and service ---
+\heading{Conference and seminar presentations}
 
-\begin{SectionTable}{\headingfont Mentorship and service}
-Month Year -- Present &
-\textbf{Title of organization you are in (Name of your role)} \newline
-Description of your responsibilities. Integer pretium semper justo. Proin risus. Nullam id quam. Nam neque. Phasellus at purus et lib ero lacinia dictum. \\
+\textbf{Title of your most recent presentation}
 
-Month Year -- Month Year &
-\textbf{Title of organization you were in (Name of your role)} \newline
-Description of your responsibilities. Integer pretium semper justo. Proin risus. Nullam id quam. Nam neque. Phasellus at purus et lib ero lacinia dictum. \\
-\end{SectionTable}
+\marginnote{October 2021}
+Name of conference, workshop, seminar, etc.
 
-% --- Section: Professional society memberships ---
+\marginnote{August 2021}
+Name of another conference where same presentation was made\medskip
 
-\begin{SectionTable}{\headingfont Professional memberships}
-Year -- Present &
-Name of professional society \newline
-\textit{Short description or conferences you attended.} \\
+\textbf{Title of your second most recent presentation}
 
-Year -- Present &
-Name of professional society \newline
-\textit{Short description or conferences you attended.} \\
-\end{SectionTable}
+\marginnote{April 2021}
+Name of conference, workshop, seminar, etc. \medskip
 
-\begin{SectionTable}{\headingfont Technical skills}
-& \textbf{Programming languages} \newline
-Proficient in: language 1, language 2, language 3 \newline
-Familiar with: language 4, language 5 \\
+\textbf{Title of your third most recent presentation}
 
-& \textbf{Software} \newline
-\LaTeX, Git, another piece of software \\
+\marginnote{January 2021}
+Name of conference, workshop, seminar, etc. \medskip
 
-& \textbf{Languages} \newline
-English (fluent), Another language (advanced)
-\end{SectionTable}
+\bigskip\bigskip
 
-% --- Section: Other interests/hobbies ---
+% --- Teaching experience ---
 
-\begin{SectionTable}{\headingfont Other interests}
-& Some of your hobbies, etc.
-\end{SectionTable}
+\heading{Teaching experience}
 
-% --- Last updated ---
+\marginnote{Fall 2021} 
+\textbf{STAT 123: Course name here, Teaching assistant -- University name} \\
+Description of your work. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \medskip
 
-\begin{center}\textit{Last updated: \today}\end{center}
+\marginnote{Spring 2021} 
+\textbf{MATH 123: Course name here, Teaching assistant -- University name} \\
+Description of your work. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-% --- End of CV! ---
+\bigskip\bigskip
+
+% --- Industry experience ---
+
+\heading{Industry experience}
+
+\marginnote{Summer 2018}
+\textbf{Name of company}, Title of job or internship -- City, State \\
+Description of your work. Nam sollicitudin metus non orci faucibus cursus. Maecenas eget arcu egestas, tincidunt est lacinia, posuere diam. \medskip
+
+\marginnote{Summer 2017}
+\textbf{Name of company}, Title of job or internship -- City, State \\
+Description of your work. Nam sollicitudin metus non orci faucibus cursus. Maecenas eget arcu egestas, tincidunt est lacinia, posuere diam.
+
+\bigskip\bigskip
+
+% --- Mentorship and service ---
+
+\heading{Mentorship and service}
+
+\marginnote{2020 -- Present}
+\textbf{Title of organization you are in}, Name of your role \\
+Description of your work. Maecenas mollis, ante a sollicitudin condimentum, diam lorem egestas nisl, scelerisque vulputate nisi dolor sit amet sapien. Sed ac posuere elit. \medskip
+
+\marginnote{2020 -- 2021}
+\textbf{Title of organization you were in}, Name of your role \\
+Description of your work. Maecenas mollis, ante a sollicitudin condimentum, diam lorem egestas nisl, scelerisque vulputate nisi dolor sit amet sapien. Sed ac posuere elit.
+
+\bigskip\bigskip
+
+% --- Professional memberships ---
+
+\heading{Professional memberships}
+
+\marginnote{2021 -- Present}
+Name of professional society
+
+\marginnote{2020 -- Present} 
+Name of professional society
+
+\marginnote{2019 -- Present} 
+Name of professional society
+
+\bigskip\bigskip
+
+% --- Skills ---
+
+\heading{Skills}
+
+\textbf{Programming} \\
+Proficient: language 1, language 2, language 3 \\
+Familiar: language 4, language 5 \medskip
+
+\textbf{Software} \\
+\LaTeX, Git, another piece of software \medskip
+
+\textbf{Languages} \\
+English (native), another language (advanced)
+
+\bigskip\bigskip
+
+% --- Hobbies ---
+
+\heading{Other interests}
+
+Some of your hobbies, etc.
+
+% --- End of CV ---
 
 \end{document}
-
-
-
-
-
