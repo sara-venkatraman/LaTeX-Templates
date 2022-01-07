@@ -1,0 +1,124 @@
+% --- LaTeX Resume Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 12pt]{article}
+
+% --- Package imports ---
+
+% Math typesetting, section fonts, links, lists
+\usepackage{amsmath, sectsty, titlesec, hyperref, setspace, soul} 
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=0.8in, right=0.8in, bottom=0.5in, top=0.6in]{geometry}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.1}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{1.5mm}
+
+% Remove paragraph indentation
+\setlength\parindent{0pt}
+
+% Set indentation for main content
+\usepackage{scrextend}
+
+% --- Page formatting settings ---
+
+% Set link colors
+\usepackage[dvipsnames]{xcolor}
+\hypersetup{colorlinks=true, linkcolor=MidnightBlue, citecolor=MidnightBlue, urlcolor=MidnightBlue}
+
+% Set font to Libertine
+\usepackage{libertine}
+
+% Font size and spacing for section headings
+\titlespacing*{\section}{0pt}{0.8em}{0.1em}
+\sectionfont{\large\normalfont\scshape\selectfont}
+
+% Remove page numbers
+\pagenumbering{gobble}
+
+% --- Document starts here ---
+
+\begin{document}
+
+% --- Name and contact information ---
+
+{\huge Your name here}
+
+\href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{www.yourwebsite.com} {\footnotesize$~\bullet~$} email@cornell.edu {\footnotesize$~\bullet~$} 314-159-2654 {\footnotesize$~\bullet~$} Citizenship: Country
+
+% --- Section: Education ---
+
+\section*{Education}
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{University 1} -- PhD in Subject \hfill 2019 -- 2024 \\
+\textbf{University 2} -- MA in Subject \hfill 2017 -- 2019 \\
+\textbf{University 3} -- BA in Subject 1, minor in Subject 2 \hfill 2013 -- 2017
+
+\begin{singlespace}
+
+{\footnotesize \ul{Teaching assistant} for Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id quam condimentum, ultrices nulla sed, venenatis massa. Teaching evaluations available \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{here}.}
+
+{\footnotesize \ul{Coursework} in measure-theoretic probability, martingales and Brownian motion, real and functional analysis, mathematical statistics, numerical linear algebra, functional programming, object-oriented programming and data structures.}
+
+\end{singlespace}
+
+\end{addmargin}
+
+% --- Section: Research experience ---
+
+\section*{Research experience \hfill {\normalfont\footnotesize Publications available on \href{https://scholar.google.com/}{Google Scholar}.}}
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{Title of project or lab where research was conducted} \hfill Fall 2021 -- Present \\
+Description of your work. Summary of findings available \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{here}. Suspendisse sit amet cursus dui. Etiam id pretium sem. Donec ac libero nec nunc auctor lobortis in vel tellus. Fusce interdum, ligula convallis lacinia facilisis, nulla tortor porttitor odio, in maximus orci erat vel justo.
+
+\textbf{Title of project or lab where research was conducted} \hfill Spring 2021 -- Present \\
+Phasellus luctus, purus id consequat euismod, lorem ante efficitur urna, vel placerat lacus diam at purus. Sed et dui et neque faucibus eleifend. Donec nec purus nunc. Sed vitae mattis neque. Aliquam eget ultricies sem, eget imperdiet ipsum.
+
+\textbf{Title of project or lab where research was conducted} \hfill Spring 2020 -- Fall 2021 \\
+Nulla posuere ante sed tellus dictum vestibulum. Sed sit amet aliquam urna. Nunc sit amet libero id nibh condimentum posuere nec egestas diam. Phasellus non augue porta, efficitur odio quis, imperdiet tortor.
+
+\end{addmargin}
+
+% --- Section: Industry experience ---
+
+\section*{Industry experience}
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{Name of company} -- Title of job or internship (City, State) \hfill Summer 2018 \\
+Quisque convallis varius cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vitae sagittis sem. 
+
+\textbf{Name of company} -- Title of job or internship (City, State) \hfill Summer 2017 \\
+Suspendisse malesuada sollicitudin sem, sit amet convallis velit faucibus at. Vivamus iaculis lorem velit, nec sodales sem aliquam sed. Nullam dolor risus, euismod non pharetra id, ultrices eu justo. 
+
+\textbf{Name of company} -- Title of job or internship (City, State) \hfill Summer 2016 \\
+Aliquam vel massa pretium, cursus massa non, suscipit dolor. Maecenas eget sapien lacus.	
+
+\end{addmargin}
+
+% --- Section: Skills and interests ---
+
+\section*{Skills and interests}
+
+\begin{addmargin}[1em]{0em}
+
+\textbf{Statistics} -- Statistics and data science techniques you know\\
+\textbf{Programming/Software} -- Programming languages you know \\
+\textbf{Languages} -- English (native), Another language (advanced) \\
+\textbf{Interests} -- Some of your hobbies, etc.
+
+\end{addmargin}
+
+% --- Document ends here ---
+	
+\end{document}
